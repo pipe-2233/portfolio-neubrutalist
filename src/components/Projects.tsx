@@ -26,7 +26,7 @@ const projects: Project[] = [
     description: "Sistema inteligente para clasificación automática de huevos usando visión por computadora y tecnologías IoT. Implementa algoritmos de machine learning para detectar calidad y tamaño.",
     technologies: ["Python", "OpenCV", "Arduino", "MQTT", "TensorFlow"],
     github: "https://github.com/pipe-2233/egg-selector-iot",
-    demo: "https://youtube.com/demo-egg-selector"
+    demo: "https://youtu.be/59WqdnSK7DM?si=XiWeay5J6FycqqUe"
   },
   {
     id: 3,
@@ -34,7 +34,7 @@ const projects: Project[] = [
     description: "Aplicación web para gestión de finanzas personales con gráficos interactivos, categorización de gastos y análisis de patrones de consumo.",
     technologies: ["React", "Node.js", "MongoDB", "Chart.js", "Express"],
     github: "https://github.com/pipe-2233/financial-dashboard",
-    demo: "https://financial-dashboard-demo.netlify.app"
+    demo: "https://pipe-2233.github.io/financial-dashboardx/"
   }
 ];
 
