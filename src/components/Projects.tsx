@@ -17,7 +17,7 @@ const projects: Project[] = [
     description: "Una aplicación web interactiva para consultar datos meteorológicos en tiempo real con autocompletado inteligente de 150+ ciudades, datos completos (temperatura, humedad, viento, UV index), efectos glassmorphism, animaciones FLIP fluidas y gestión de hasta 4 ciudades simultáneamente. Incluye persistencia de datos y diseño responsivo moderno.",
     technologies: ["TypeScript", "Vite", "SCSS", "WeatherAPI", "Framer Motion", "Date-fns"],
     github: "https://github.com/pipe-2233/weather-dashboard",
-    demo: "https://pipe-2233.github.io/weather-dashboard/",
+    demo: "https://pipe-2233.github.io/-Weather-Dashboard/",
     featured: true
   },
   {
