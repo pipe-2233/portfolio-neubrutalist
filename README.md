@@ -61,7 +61,7 @@ Dashboard de análisis financiero en tiempo real:
 ## � Contacto
 
 - **Email**: andresfelipemonotya56@gmail.com
-- **WhatsApp**: +57 320 357 4631
+- **WhatsApp**: +57 313 643 6028
 - **Ubicación**: Palmira, Valle del Cauca, Colombia
 
 ## 🛠 Instalación Local
@@ -91,4 +91,4 @@ Este proyecto está optimizado para despliegue en:
 
 > 💡 **¿Buscas un desarrollador Full Stack con experiencia en IoT?** ¡Hablemos!
 
-**© 2025 Andrés Felipe Montoya Baena - Todos los derechos 
+**© 2025 Andrés Felipe Montoya Baena - Todos los derechos

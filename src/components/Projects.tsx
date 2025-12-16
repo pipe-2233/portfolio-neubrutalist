@@ -13,11 +13,11 @@ interface Project {
 const projects: Project[] = [
   {
     id: 1,
-    title: "Weather Dashboard",
-    description: "Una aplicación web interactiva para consultar datos meteorológicos en tiempo real con autocompletado inteligente de 150+ ciudades, datos completos (temperatura, humedad, viento, UV index), efectos glassmorphism, animaciones FLIP fluidas y gestión de hasta 4 ciudades simultáneamente. Incluye persistencia de datos y diseño responsivo moderno.",
-    technologies: ["TypeScript", "Vite", "SCSS", "WeatherAPI", "Framer Motion", "Date-fns"],
-    github: "https://github.com/pipe-2233/weather-dashboard",
-    demo: "https://pipe-2233.github.io/-Weather-Dashboard/",
+    title: "Motor Monitoring",
+    description: "Este proyecto implementa un sistema de monitoreo de motores trifásicos industriales. Incluye análisis predictivo, diagnóstico automático, control remoto mediante MQTT, y una interfaz web moderna para visualización de métricas.",
+    technologies: ["Python", "MQTT", "React", "Grafana", "ESP32", "Node.js"],
+    github: "https://github.com/pipe-2233/motor_monitoring",
+    demo: "https://pipe-2233.github.io/motor_monitoring/",
     featured: true
   },
   {
@@ -30,11 +30,11 @@ const projects: Project[] = [
   },
   {
     id: 3,
-    title: "Dashboard Financiero",
-    description: "Aplicación web para gestión de finanzas personales con gráficos interactivos, categorización de gastos y análisis de patrones de consumo.",
-    technologies: ["React", "Node.js", "MongoDB", "Chart.js", "Express"],
-    github: "https://github.com/pipe-2233/financial-dashboard",
-    demo: "https://pipe-2233.github.io/financial-dashboardx/"
+    title: "StepperL298N Library",
+    description: "Una librería simple y eficiente para controlar motores paso a paso usando el driver dual H-bridge L298N. Incluye API fácil de usar, control de velocidad configurable, y ejemplos avanzados.",
+    technologies: ["Arduino", "ESP32", "C++", "L298N"],
+    github: "https://github.com/pipe-2233/StepperL298N",
+    demo: "https://pipe-2233.github.io/StepperL298N/"
   }
 ];
 

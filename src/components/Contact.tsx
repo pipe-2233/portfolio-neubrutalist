@@ -110,7 +110,7 @@ const Contact = () => {
                   <div className="w-12 h-12 bg-neubrutalist-lime border-brutal border-neubrutalist-black shadow-brutal-lime flex items-center justify-center">
                     <span className="text-neubrutalist-black font-brutal">📱</span>
                   </div>
-                  <span className="font-brutal text-neubrutalist-black">+57 320 357 4631 (WhatsApp)</span>
+                  <span className="font-brutal text-neubrutalist-black">+57 313 643 6028 </span>
                 </div>
                 
                 <div className="flex items-center gap-4">

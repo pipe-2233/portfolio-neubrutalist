@@ -1,7 +1,7 @@
 # ANDRÉS FELIPE MONTOYA BAENA
 **Tecnólogo en Electrónica Industrial | Full Stack Developer | IoT Specialist**
 
-📧 andresfelipemonotya56@gmail.com | 📱 +57 320 357 4631 (WhatsApp)  
+📧 andresfelipemonotya56@gmail.com | 📱 +57 313 643 6028 (WhatsApp)  
 📍 Palmira, Valle del Cauca, Colombia  
 🔗 [GitHub: pipe-2233](https://github.com/pipe-2233) | [LinkedIn](https://www.linkedin.com/in/andres-felipe-montoya-baena-749b63256)
 
@@ -119,7 +119,7 @@ Portafolio personal con diseño moderno y responsive
 
 Estoy disponible para una **conversación** sobre cómo puedo aportar valor a tu equipo. Especializado en crear soluciones que **combinan IoT, desarrollo web y automatización** para resolver problemas reales.
 
-**📧 andresfelipemonotya56@gmail.com | 📱 +57 320 357 4631**
+**📧 andresfelipemonotya56@gmail.com | 📱 +57 313 643 6028**
 
 ---
 
