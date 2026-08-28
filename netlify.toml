@@ -1,4 +1,4 @@
 [build]
-  # Sin build: el sitio es un unico index.html autocontenido.
-  command = "echo \"no build needed\""
-  publish = "."
+  # Sin compilar: solo copiamos el index.html autocontenido a dist/
+  command = "mkdir -p dist && cp index.html dist/index.html"
+  publish = "dist"
