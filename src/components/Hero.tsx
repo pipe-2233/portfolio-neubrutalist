@@ -1,69 +1,62 @@
-import profilePhoto from '../assets/photo_perfil.jpg';
+import perfil from '../assets/perfil.png'
+import { ChevronDown } from 'lucide-react'
 
 const Hero = () => {
   return (
-    <section id="hero" className="section-brutal min-h-screen flex items-center justify-center bg-neubrutalist-yellow relative overflow-hidden">
-      {/* Decorative elements */}
-      <div className="absolute top-20 right-20 w-32 h-32 bg-neubrutalist-pink border-brutal border-neubrutalist-black shadow-brutal-pink transform rotate-12"></div>
-      <div className="absolute bottom-20 left-20 w-24 h-24 bg-neubrutalist-lime border-brutal border-neubrutalist-black shadow-brutal-lime transform -rotate-12"></div>
-      
-      <div className="text-center z-10 max-w-4xl mx-auto">
-        {/* Profile Image */}
-        <div className="w-48 h-48 mx-auto mb-8 border-brutal border-neubrutalist-black shadow-brutal transform rotate-3 overflow-hidden">
-          <img 
-            src={profilePhoto} 
-            alt="Andrés Felipe Montoya Baena - Full Stack Developer & IoT Specialist" 
-            className="w-full h-full object-cover"
+    <section
+      id="hero"
+      className="relative min-h-screen w-full overflow-hidden bg-dark-bg text-dark-text font-sans flex flex-col items-center justify-center"
+    >
+      {/* CONTENEDOR MAESTRO: foto + texto en el mismo eje, centrado vertical y horizontal.
+          h-screen garantiza que TODO cabe sin scroll en pantallas normales. */}
+      <div className="relative flex items-center justify-center w-full h-screen">
+
+        {/* PORTAFOLIO: una sola capa que ocupa el ancho, centrada en el contenedor.
+            Su top-1/2 con -translate-y-1/2 + aspect ratio igual al de la foto hace que
+            el texto cruce la imagen por la mitad exacta. */}
+        <h1
+          aria-hidden
+          className="pointer-events-none absolute inset-x-0 top-1/2 -translate-y-1/2 z-0 text-center font-sans font-black tracking-tighter leading-none text-[clamp(4rem,16vw,12rem)] text-white select-none whitespace-nowrap uppercase"
+        >
+          PORTAFOLIO
+        </h1>
+
+        {/* FOTO: capa intermedia */}
+        <div className="relative z-10 w-[55vw] max-w-[420px] md:w-[45vw] md:max-w-[640px] select-none filter drop-shadow-2xl">
+          <img
+            src={perfil}
+            alt="Andrés Felipe Montoya Baena — Full Stack & IoT Developer"
+            className="h-full w-full object-cover"
+            draggable={false}
           />
         </div>
-        
-        {/* Main Title */}
-        <h1 className="heading-brutal text-center mb-4">
-          <span className="block text-brutal-xl">ANDRÉS FELIPE</span>
-          <span className="block text-brutal-lg text-neubrutalist-red">MONTOYA BAENA</span>
+
+        {/* PORTAFOLIO outline: al frente (z-30), capa más visible sobre la foto */}
+        <h1
+          aria-hidden
+          className="pointer-events-none absolute inset-x-0 top-1/2 -translate-y-1/2 z-30 text-center font-sans font-black tracking-tighter leading-none text-[clamp(4rem,16vw,12rem)] text-transparent select-none whitespace-nowrap uppercase"
+          style={{ WebkitTextStroke: '1px rgba(255, 255, 255, 0.7)' }}
+        >
+          PORTAFOLIO
         </h1>
-        
-        {/* Subtitle */}
-        <div className="mb-8">
-          <span className="inline-block bg-neubrutalist-black text-neubrutalist-white px-6 py-3 border-brutal border-neubrutalist-black shadow-brutal text-brutal-sm font-brutal transform -rotate-1">
-            FULL STACK DEVELOPER & IoT SPECIALIST
-          </span>
-        </div>
-        
-        {/* Description */}
-        <p className="text-xl font-brutal text-neubrutalist-black mb-12 max-w-2xl mx-auto leading-tight">
-          Tecnólogo en Electrónica Industrial especializado en desarrollo Full Stack, 
-          Python, React y soluciones IoT. +3 años creando tecnología innovadora.
+      </div>
+
+      {/* Tagline: con position absolute respecto al section, no al contenedor maestro.
+          pb-16 la sube del borde inferior para no chocar con el scroll indicator. */}
+      <div className="absolute z-40 bottom-20 left-1/2 -translate-x-1/2 text-center">
+        <p className="text-dark-muted text-xs md:text-sm tracking-[0.4em] uppercase font-mono whitespace-nowrap">
+          Andrés Felipe Montoya
+          <span className="mx-3 text-dark-dim">·</span>
+          Full Stack <span className="text-accent-cyan">&</span> IoT Developer
         </p>
-        
-        {/* CTA Buttons */}
-        <div className="flex flex-col sm:flex-row gap-6 justify-center items-center">
-          <a
-            href="#projects"
-            className="btn-brutal bg-neubrutalist-red text-neubrutalist-white shadow-brutal-red"
-            onClick={(e) => {
-              e.preventDefault();
-              document.querySelector('#projects')?.scrollIntoView({ behavior: 'smooth' });
-            }}
-          >
-            VER PROYECTOS
-          </a>
-          <a
-            href="/CV-Andres-Felipe-Montoya-2025-updated.pdf"
-            download="CV-Andres-Felipe-Montoya-2025.pdf"
-            className="btn-brutal bg-neubrutalist-lime text-neubrutalist-black shadow-brutal"
-          >
-            📥 DESCARGAR CV
-          </a>
-        </div>
       </div>
-      
-      {/* Floating elements */}
-      <div className="absolute top-1/2 left-10 transform -translate-y-1/2">
-        <div className="w-16 h-16 bg-neubrutalist-orange border-brutal border-neubrutalist-black shadow-brutal-orange animate-bounce"></div>
-      </div>
-      <div className="absolute top-1/3 right-10 transform -translate-y-1/2">
-        <div className="w-20 h-20 bg-neubrutalist-purple border-brutal border-neubrutalist-black shadow-brutal animate-pulse"></div>
+
+      {/* Indicador de scroll */}
+      <div className="absolute inset-x-0 bottom-6 z-40 flex justify-center text-dark-dim">
+        <ChevronDown
+          className="h-6 w-6 animate-bounce opacity-70"
+          aria-label="Desplaza hacia abajo"
+        />
       </div>
     </section>
   )

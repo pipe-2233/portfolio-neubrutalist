@@ -1,106 +1,152 @@
-@import url('https://fonts.googleapis.com/css2?family=Inter:wght@400;600;700;800;900&family=Poppins:wght@400;600;700;800;900&display=swap');
-
 @tailwind base;
 @tailwind components;
 @tailwind utilities;
 
-:root {
-  font-family: 'Inter', 'Poppins', system-ui, sans-serif;
-  line-height: 1.4;
-  font-weight: 400;
-  
-  color-scheme: light;
-  color: #000000;
-  background-color: #FFFFFF;
+/* ─── Base reset ─────────────────────────────────────────────── */
 
+* {
+  box-sizing: border-box;
+}
+
+:root {
+  color-scheme: dark;
+  font-family: 'Inter', system-ui, -apple-system, sans-serif;
+  font-weight: 400;
+  line-height: 1.55;
   font-synthesis: none;
   text-rendering: optimizeLegibility;
   -webkit-font-smoothing: antialiased;
   -moz-osx-font-smoothing: grayscale;
 }
 
-/* Estilos base Neubrutalist */
-* {
-  box-sizing: border-box;
+html {
+  scroll-behavior: smooth;
 }
 
 body {
   margin: 0;
-  padding: 0;
   min-height: 100vh;
-  font-family: 'Inter', 'Poppins', sans-serif;
-  background-color: #FFFFFF;
-  color: #000000;
+  background-color: #0A0E14;
+  color: #E6EDF3;
+  font-feature-settings: 'cv11', 'ss01', 'ss03';
 }
 
-/* Componentes reutilizables Neubrutalist */
+/* Offset para navbar sticky al usar #anchor en href */
+section[id] {
+  scroll-margin-top: 80px;
+}
+
+/* Selection */
+::selection {
+  background-color: rgba(0, 212, 255, 0.25);
+  color: #E6EDF3;
+}
+
+/* Focus visible accesible */
+*:focus-visible {
+  outline: 2px solid #00D4FF;
+  outline-offset: 2px;
+  border-radius: 4px;
+}
+
+/* Reduced motion */
+@media (prefers-reduced-motion: reduce) {
+  *,
+  *::before,
+  *::after {
+    animation-duration: 0.01ms !important;
+    animation-iteration-count: 1 !important;
+    transition-duration: 0.01ms !important;
+    scroll-behavior: auto !important;
+  }
+}
+
+/* ─── Componentes reutilizables ──────────────────────────────── */
+
 @layer components {
-  .btn-brutal {
-    @apply px-6 py-3 border-brutal border-neubrutalist-black bg-neubrutalist-yellow text-neubrutalist-black font-brutal text-brutal-sm shadow-brutal hover:translate-x-1 hover:translate-y-1 hover:shadow-none transition-all duration-150 cursor-pointer;
+  /* Botón primary (cyan → acción principal) */
+  .btn-primary {
+    @apply inline-flex items-center justify-center gap-2 px-6 py-3 rounded-md
+           bg-accent-cyan text-dark-bg font-semibold text-sm
+           transition-all duration-200 ease-out cursor-pointer
+           hover:bg-cyan-300 hover:shadow-glow-cyan-lg
+           active:translate-y-px
+           disabled:opacity-50 disabled:cursor-not-allowed;
   }
-  
-  .card-brutal {
-    @apply border-brutal border-neubrutalist-black shadow-brutal bg-neubrutalist-white p-6;
+
+  /* Botón outline (acción secundaria) */
+  .btn-outline {
+    @apply inline-flex items-center justify-center gap-2 px-6 py-3 rounded-md
+           bg-transparent text-accent-cyan font-semibold text-sm
+           border border-accent-cyan/40
+           transition-all duration-200 ease-out cursor-pointer
+           hover:border-accent-cyan hover:bg-accent-cyan/5 hover:shadow-glow-cyan
+           active:translate-y-px;
   }
-  
-  .section-brutal {
-    @apply py-16 px-6 relative;
+
+  /* Botón ghost (terciario) */
+  .btn-ghost {
+    @apply inline-flex items-center justify-center gap-2 px-6 py-3 rounded-md
+           bg-dark-surface text-dark-text font-medium text-sm
+           border border-dark-border
+           transition-all duration-200 ease-out cursor-pointer
+           hover:border-dark-border-strong hover:bg-dark-surface-hover;
   }
-  
-  .heading-brutal {
-    @apply font-brutal text-brutal-xl text-neubrutalist-black mb-8;
+
+  /* Card oscura estándar */
+  .card-dark {
+    @apply bg-dark-surface border border-dark-border rounded-lg
+           shadow-card transition-all duration-300 ease-out
+           hover:border-accent-cyan/40 hover:shadow-card-hover;
+  }
+
+  /* Chip de tech stack (lime) */
+  .tech-chip {
+    @apply inline-flex items-center px-2.5 py-1 rounded
+           bg-accent-lime/10 text-accent-lime border border-accent-lime/30
+           font-mono text-xs font-medium tracking-wide
+           transition-colors duration-150
+           hover:bg-accent-lime/15;
+  }
+
+  /* Chip genérico (outline cyan) */
+  .tag-chip {
+    @apply inline-flex items-center px-3 py-1 rounded-full
+           border border-dark-border-strong text-dark-muted
+           text-xs font-medium
+           transition-colors duration-150 cursor-pointer
+           hover:border-accent-cyan/50 hover:text-accent-cyan;
+  }
+
+  /* Sección estándar */
+  .section-dark {
+    @apply relative px-6 py-20 md:py-28;
+  }
+
+  /* Heading monospace (títulos tech) */
+  .heading-mono {
+    @apply font-mono text-accent-cyan text-sm tracking-widest uppercase;
+  }
+
+  /* Heading display */
+  .heading-display {
+    @apply font-sans font-bold text-3xl md:text-4xl text-dark-text tracking-tight;
   }
 }
 
-/* Asegurar que los colores personalizados funcionen */
-.bg-neubrutalist-yellow { background-color: #FFFF00 !important; }
-.bg-neubrutalist-pink { background-color: #FF1493 !important; }
-.bg-neubrutalist-lime { background-color: #32FF32 !important; }
-.bg-neubrutalist-blue { background-color: #0080FF !important; }
-.bg-neubrutalist-red { background-color: #FF0000 !important; }
-.bg-neubrutalist-black { background-color: #000000 !important; }
-.bg-neubrutalist-white { background-color: #FFFFFF !important; }
-.bg-neubrutalist-orange { background-color: #FF8C00 !important; }
-.bg-neubrutalist-purple { background-color: #8A2BE2 !important; }
+/* ─── Decoración segura (NO tapa clicks) ────────────────────── */
 
-.text-neubrutalist-black { color: #000000 !important; }
-.text-neubrutalist-white { color: #FFFFFF !important; }
-
-.border-neubrutalist-black { border-color: #000000 !important; }
-.border-brutal { border-width: 4px !important; }
-
-.shadow-brutal { box-shadow: 8px 8px 0px 0px #000000 !important; }
-.shadow-brutal-pink { box-shadow: 8px 8px 0px 0px #FF1493 !important; }
-.shadow-brutal-blue { box-shadow: 8px 8px 0px 0px #0080FF !important; }
-.shadow-brutal-red { box-shadow: 8px 8px 0px 0px #FF0000 !important; }
-.shadow-brutal-lime { box-shadow: 8px 8px 0px 0px #32FF32 !important; }
-.shadow-brutal-orange { box-shadow: 8px 8px 0px 0px #FF8C00 !important; }
-
-.font-brutal { 
-  font-family: 'Inter', 'Poppins', 'Montserrat', sans-serif !important;
-  font-weight: 700 !important;
+.deco-grid {
+  background-image:
+    linear-gradient(rgba(255, 255, 255, 0.025) 1px, transparent 1px),
+    linear-gradient(90deg, rgba(255, 255, 255, 0.025) 1px, transparent 1px);
+  background-size: 40px 40px;
+  pointer-events: none;
 }
 
-.text-brutal-xl { 
-  font-size: 4rem !important; 
-  line-height: 1 !important; 
-  font-weight: 900 !important; 
-}
-
-.text-brutal-lg { 
-  font-size: 3rem !important; 
-  line-height: 1.1 !important; 
-  font-weight: 800 !important; 
-}
-
-.text-brutal-md { 
-  font-size: 2rem !important; 
-  line-height: 1.2 !important; 
-  font-weight: 700 !important; 
-}
-
-.text-brutal-sm { 
-  font-size: 1.5rem !important; 
-  line-height: 1.3 !important; 
-  font-weight: 600 !important; 
+/* Glow blobs detrás del hero — pointer-events:none garantiza que no roban clicks */
+.deco-blob {
+  pointer-events: none;
+  filter: blur(80px);
+  opacity: 0.4;
 }
