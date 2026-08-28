@@ -1,0 +1,4 @@
+[build]
+  # Sin build: el sitio es un unico index.html autocontenido.
+  command = "echo \"no build needed\""
+  publish = "."
